@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
+import { InfiniteLoopedPanels } from "@/components/sections/InfiniteLoopedPanels";
 import { Skills } from "@/components/sections/Skills";
 import { Workflows } from "@/components/sections/Workflows";
 import { Experience } from "@/components/sections/Experience";
@@ -21,6 +22,7 @@ export default function Home() {
         />
         <Hero />
         <About />
+        <InfiniteLoopedPanels />
         <Skills />
         <Workflows />
         <Experience />
