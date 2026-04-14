@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: #0b0b0f;
+  --foreground: #f4f4f8;
+  --muted: #9ca3af;
+  --accent-cyan: #22d3ee;
+  --accent-violet: #a78bfa;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+/* Subtle film grain (no extra assets) */
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .glass-panel {
+    @apply border border-white/[0.08] bg-white/[0.03] shadow-[0_0_0_1px_rgba(255,255,255,0.04)_inset] backdrop-blur-xl;
+  }
+
+  .glow-cyan {
+    box-shadow:
+      0 0 60px -15px rgba(34, 211, 238, 0.45),
+      0 0 0 1px rgba(34, 211, 238, 0.12);
+  }
+
+  .glow-violet {
+    box-shadow:
+      0 0 50px -12px rgba(167, 139, 250, 0.4),
+      0 0 0 1px rgba(167, 139, 250, 0.1);
+  }
+
+  .text-gradient-premium {
+    @apply bg-gradient-to-r from-cyan-200 via-white to-violet-200 bg-clip-text text-transparent;
+  }
+}
